@@ -9,6 +9,7 @@ module Formula
 end
 
 class Rectangulo
+  attr_reader :lado , :ancho
   include Formula
   def initialize(lado, ancho)
     @lado = lado
@@ -16,11 +17,13 @@ class Rectangulo
   end
 
   def lados_rectangulo
-    print @lado , @ancho
+    @lado
+    @ancho
   end
 end
 
 class Cuadrado
+  attr_reader :lado# Incluir getter para cceder a varia
   include Formula
   def initialize(lado)
     @lado = lado
@@ -28,7 +31,7 @@ class Cuadrado
   end
 
   def lados_cuadrado
-    print @lado
+    @lado
   end
 end
 
@@ -37,7 +40,7 @@ puts "El lado del cuadrado es #{c.lados_cuadrado}"
 puts "El perimetro del cuadrado es #{c.perimetro}"
 
 r = Rectangulo.new(10 , 2)
-puts "Los lados del rectangulo son #{r.lados_rectangulo}"
+puts "Los lados del rectangulo son #{r.lado} y #{r.ancho}"#poner getter para acceder a datos desde afuera.
 puts "El perimetro del rectangulo es #{r.perimetro}"
 
 # Se tienen las clases Rectangulo y Cuadrado cuyos constructores reciben las medidas de
